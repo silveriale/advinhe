@@ -1,0 +1,22 @@
+/* 
+ * Este arquivo define os estilos do componente `Input`,
+ * controlando tamanho, cores, tipografia e alinhamento
+ * dos campos de entrada utilizados no jogo.
+ */
+
+.input {
+  width: 2.87rem; /* Define a largura fixa do campo de entrada */
+  height: 2.87rem; /* Define a altura fixa do campo de entrada */
+  border-radius: 0.43rem; /* Arredonda levemente os cantos do campo */
+
+  background-color: #ebebfc; /* Define a cor de fundo do campo */
+  border: 2px solid #6363db; /* Define a cor e a espessura da borda */
+  color: #6363db; /* Define a cor do texto digitado no campo */
+
+  text-transform: uppercase; /* Converte o texto digitado para letras maiúsculas */
+  text-align: center; /* Centraliza o texto digitado no campo */
+  font-size: 1rem; /* Define o tamanho da fonte */
+  font-weight: 700; /* Define a espessura da fonte como negrito */
+
+  outline: none; /* Remove o contorno padrão ao focar no campo */
+}
