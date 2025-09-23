@@ -1,0 +1,49 @@
+/* Container principal do cabeçalho */
+.container {
+  width: 100%; /* Define a largura total */
+  display: flex; /* Usa layout flexível */
+  flex-direction: column; /* Os filhos ficam em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Logo do cabeçalho */
+.container > img {
+  height: 3.75rem; /* Altura da imagem */
+}
+
+/* Área do header dentro do container */
+.container > header {
+  width: 100%; /* Ocupa toda a largura */
+  display: flex; /* Layout flexível na horizontal */
+  justify-content: space-between; /* Espaço igual entre os elementos */
+  padding: 3.25rem 0; /* Espaçamento acima e abaixo */
+}
+
+/* Botão dentro do header */
+.container > header button {
+  background: transparent; /* Fundo transparente */
+  border: none; /* Remove borda */
+}
+
+/* Efeito ao passar o mouse na imagem do header */
+.container > header img:hover {
+  scale: 1.3; /* Aumenta o tamanho da imagem */
+}
+
+/* Imagem dentro do header */
+.container > header img {
+  height: 2rem; /* Altura da imagem */
+  transition: scale 0.5s; /* Transição suave ao aumentar */
+}
+
+/* Texto do header */
+.container > header span {
+  font-size: 1.12rem; /* Tamanho da fonte */
+  color: #9b9b9b; /* Cor do texto */
+}
+
+/* Destaque dentro do texto do header */
+.container > header span strong {
+  font-size: 1.37rem; /* Tamanho maior para destaque */
+  color: #e8891c; /* Cor de destaque */
+}
