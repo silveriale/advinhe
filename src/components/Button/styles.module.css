@@ -1,0 +1,18 @@
+/* 
+ * Este arquivo define os estilos do componente `Button`,
+ * controlando dimensões, cores, bordas, tipografia e espaçamento
+ * para os botões da aplicação.
+ */
+
+.button {
+  height: 2.87rem; /* Define a altura fixa do botão */
+  border-radius: 0.43rem; /* Arredonda levemente os cantos do botão */
+
+  background-color: #6363db; /* Define a cor de fundo do botão */
+  border: 2px solid #4f4fb9; /* Define a cor e a espessura da borda */
+  color: #ebebfc; /* Define a cor do texto dentro do botão */
+
+  padding: 0 0.87rem; /* Define o espaçamento interno nas laterais */
+  font-size: 1rem; /* Define o tamanho da fonte */
+  font-weight: 700; /* Define a espessura da fonte como negrito */
+}

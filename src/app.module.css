@@ -31,3 +31,9 @@
 
   margin: 2.5rem 0; /* Espaçamento acima e abaixo do bloco */
 }
+
+.guess {
+  display: flex; /* Usa flexbox para alinhar os elementos filhos em linha */
+  gap: 0.75rem; /* Define o espaçamento horizontal entre os itens */
+  margin-top: 0.75rem; /* Adiciona um espaçamento acima do bloco */
+}

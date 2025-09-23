@@ -1,29 +1,36 @@
+/* 
+ * Este arquivo define os estilos globais da aplicação,
+ * incluindo configurações de fontes, reset de espaçamento,
+ * estilos básicos para o body, inputs e botões.
+ */
+
 :root {
-  font-size: 16px;
+  font-size: 16px; /* Define o tamanho base da fonte para toda a aplicação */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o padding padrão de todos os elementos */
+  box-sizing: border-box; /* Faz com que largura e altura incluam bordas e padding */
 }
 
 body {
-  background-color: #f5f5fa;
-
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
+  background-color: #f5f5fa; /* Define a cor de fundo padrão do corpo da aplicação */
+  font-family: "Noto Sans", serif; /* Define a fonte padrão do texto */
 }
 
-input {
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
+input,
+button {
+  font-family: "Noto Sans", serif; /* Garante que os campos de entrada usem a mesma fonte */
 }
 
 button {
-  cursor: pointer;
-  transition: filter 0.2s;
+  cursor: pointer; /* Muda o cursor para "mãozinha" ao passar sobre botões */
+  transition: filter 0.2s; /* Adiciona transição suave ao aplicar efeitos de filtro */
 }
+
 button:hover {
-  filter: brightness(0.9);
+  filter: brightness(
+    0.9
+  ); /* Escurece levemente o botão quando o mouse passa por cima */
 }
