@@ -1,0 +1,18 @@
+/* 
+ * Este arquivo define os estilos do componente `LettersUsed`,
+ * controlando o layout, cores e espaçamento da seção que exibe
+ * as letras já utilizadas no jogo.
+ */
+
+.lettersUsed {
+  width: 100%; /* Define que o container ocupa toda a largura disponível */
+  margin-top: 3.25rem; /* Adiciona espaçamento acima do container */
+  border-top: 1px solid #c3c3c3; /* Adiciona uma borda superior cinza clara */
+}
+
+.lettersUsed > h5 {
+  color: #32325f; /* Define a cor do texto do título */
+  font-size: 1rem; /* Define o tamanho da fonte */
+  font-weight: 600; /* Define a espessura da fonte como semi-negrito */
+  margin: 0.75rem 0; /* Define margens superior e inferior para o título */
+}
