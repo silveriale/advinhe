@@ -30,3 +30,15 @@
   font-weight: 500; /* Define a espessura da fonte como média */
   border: 1px solid #6363db; /* Aplica uma borda roxa em volta da letra */
 }
+
+.letterCorrect {
+  background-color: #e1f5ec; /* Define a cor de fundo verde clara indicando acerto */
+  border-color: #03ab47; /* Define a cor da borda em verde para reforçar o acerto */
+  color: #03ab47; /* Define a cor do texto em verde */
+}
+
+.letterWrong {
+  background-color: #ffcf62; /* Define a cor de fundo amarela indicando erro */
+  border-color: #691b0a; /* Define a cor da borda em marrom avermelhado para reforçar o erro */
+  color: #691b0a; /* Define a cor do texto em marrom avermelhado */
+}

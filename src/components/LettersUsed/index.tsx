@@ -21,8 +21,8 @@ export function LettersUsed() {
 
       {/* Lista de letras já utilizadas, renderizadas para o tamanho pequeno*/}
       <div>
-        <Letter value="X" size="small" />
-        <Letter value="R" size="small" />
+        <Letter value="X" size="small" color="correct" />
+        <Letter value="R" size="small" color="wrong" />
       </div>
     </div>
   );
