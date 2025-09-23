@@ -16,3 +16,9 @@
   font-weight: 600; /* Define a espessura da fonte como semi-negrito */
   margin: 0.75rem 0; /* Define margens superior e inferior para o título */
 }
+
+.lettersUsed > div {
+  display: flex; /* Usa flexbox para organizar os elementos filhos em linha */
+  gap: 0.75rem; /* Define o espaçamento entre os itens */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo quando necessário */
+}

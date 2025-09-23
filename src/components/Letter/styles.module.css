@@ -20,3 +20,13 @@
   align-items: center; /* Alinha o conteúdo verticalmente ao centro */
   justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
 }
+
+.letterSmall {
+  width: 2.75rem; /* Define a largura fixa da letra em versão reduzida */
+  height: 2.75rem; /* Define a altura fixa da letra em versão reduzida */
+  border-radius: 0.43rem; /* Arredonda levemente os cantos do quadrado da letra menor */
+
+  font-size: 1.25rem; /* Define o tamanho da fonte da letra menor */
+  font-weight: 500; /* Define a espessura da fonte como média */
+  border: 1px solid #6363db; /* Aplica uma borda roxa em volta da letra */
+}
