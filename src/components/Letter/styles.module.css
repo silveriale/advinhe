@@ -1,0 +1,22 @@
+/* 
+ * Este arquivo define os estilos do componente `Letter`,
+ * controlando tamanho, cores, tipografia e alinhamento 
+ * das letras exibidas no jogo.
+ */
+
+.letter {
+  width: 3.37rem; /* Define a largura fixa da letra */
+  height: 3.37rem; /* Define a altura fixa da letra */
+  border-radius: 0.63rem; /* Arredonda levemente os cantos do quadrado da letra */
+
+  background-color: #ebebfc; /* Define a cor de fundo da letra */
+  color: #6363db; /* Define a cor do texto da letra */
+
+  text-transform: uppercase; /* Força todas as letras a ficarem em maiúsculas */
+  font-size: 2rem; /* Define o tamanho da fonte da letra */
+  font-weight: 700; /* Define a espessura da fonte como negrito */
+
+  display: flex; /* Usa flexbox para centralizar o conteúdo */
+  align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+  justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
+}
