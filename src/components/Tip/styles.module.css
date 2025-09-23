@@ -1,0 +1,32 @@
+/* 
+ * Este arquivo define os estilos do componente `Tip`, 
+ * controlando a aparência visual da dica, incluindo layout, cores, 
+ * tipografia e espaçamento.
+ */
+
+.tip {
+  width: 100%; /* Define que o elemento ocupará 100% da largura disponível */
+  background-color: #ebebfc; /* Define a cor de fundo do elemento */
+  color: #4f4fb9; /* Define a cor do texto dentro do elemento */
+
+  border-radius: 0.62rem; /* Arredonda os cantos do elemento */
+  padding: 1rem; /* Define o espaçamento interno (padding) do elemento */
+
+  display: flex; /* Define o layout flexível para alinhar os filhos */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  gap: 1rem; /* Define o espaçamento entre os itens filhos */
+}
+
+.tip h3 {
+  font-size: 1.25rem; /* Define o tamanho da fonte do título */
+  font-weight: 700; /* Define a espessura da fonte como negrito */
+}
+
+.tip p {
+  font-size: 1rem; /* Define o tamanho da fonte do parágrafo */
+  margin-top: 0.31rem; /* Adiciona um espaçamento acima do parágrafo */
+}
+
+.tip > img {
+  height: 2rem; /* Define a altura fixa da imagem dentro do componente */
+}
