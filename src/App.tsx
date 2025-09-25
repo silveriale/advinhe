@@ -6,11 +6,12 @@ import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { Letter } from "./components/Letter";
 import { Header } from "./components/Header";
-import { LettersUsed } from "./components/LettersUsed";
+import { LettersUsed, LettersUsedProps } from "./components/LettersUsed";
 
 export default function App() {
   const [letter, setLetter] = useState(""); // letras já digitadas
   const [attempts, setAttempts] = useState(0); // tentativas
+  const [lettersUsed, setLettersUsed] = useState<LettersUsedProps[]>([]);
   const [challenge, setChallenge] = useState<Challenge | null>(null);
 
   function handleRestartGame() {
@@ -58,7 +59,7 @@ export default function App() {
           <Button title="Confirmar" />
         </div>
 
-        <LettersUsed />
+        <LettersUsed data={lettersUsed} />
       </main>
     </div>
   );

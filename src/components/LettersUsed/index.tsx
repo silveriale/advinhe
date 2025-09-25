@@ -1,28 +1,53 @@
 /**
- * @file Este arquivo define o componente `LettersUsed`, responsável por exibir
- * a seção que lista as letras já utilizadas durante o jogo.
+ * @file Componente `LettersUsed` responsável por exibir as letras já utilizadas no jogo,
+ * indicando visualmente se estavam corretas ou incorretas.
  */
 
 import styles from "./styles.module.css";
 import { Letter } from "../Letter";
 
 /**
- * Componente `LettersUsed`.
- * Renderiza uma seção contendo o título "Letras utilizadas" e as letras já usadas.
+ * Tipo que representa uma letra utilizada no jogo.
  *
- * @returns {JSX.Element} Estrutura JSX que mostra a área destinada às letras usadas.
+ * @property {string} value - Letra jogada pelo usuário.
+ * @property {boolean} correct - Indica se a letra estava correta (true) ou incorreta (false).
  */
-export function LettersUsed() {
+export type LettersUsedProps = {
+  value: string;
+  correct: boolean;
+};
+
+/**
+ * Propriedades esperadas pelo componente `LettersUsed`.
+ *
+ * @property {LettersUsedProps[]} data - Lista de letras jogadas, incluindo valor e status de acerto.
+ */
+type Props = {
+  data: LettersUsedProps[];
+};
+
+/**
+ * Componente `LettersUsed`.
+ * Renderiza uma seção com o título "Letras utilizadas" e a lista das letras já jogadas.
+ * Cada letra é exibida em tamanho pequeno e com cor representando acerto ou erro.
+ *
+ * @returns {JSX.Element} Estrutura JSX da seção de letras usadas.
+ */
+export function LettersUsed({ data }: Props) {
   return (
     // Container principal da seção de letras utilizadas
     <div className={styles.lettersUsed}>
-      {/* Título da seção */}
       <h5>Letras utilizadas:</h5>
 
-      {/* Lista de letras já utilizadas, renderizadas para o tamanho pequeno*/}
+      {/* Lista de letras utilizadas, com indicação de acerto (verde) ou erro (vermelho) */}
       <div>
-        <Letter value="X" size="small" color="correct" />
-        <Letter value="R" size="small" color="wrong" />
+        {data.map(({ value, correct }) => (
+          <Letter
+            value={value}
+            size="small"
+            color={correct ? "correct" : "wrong"}
+          />
+        ))}
       </div>
     </div>
   );
