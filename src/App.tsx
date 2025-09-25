@@ -1,12 +1,14 @@
 import styles from "./app.module.css";
 import { useEffect, useState } from "react";
-import { WORDS, Challenge } from "./utils/words";
+import { WORDS } from "./utils/words";
+import type { Challenge } from "./utils/words";
 import { Tip } from "./components/Tip";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { Letter } from "./components/Letter";
 import { Header } from "./components/Header";
-import { LettersUsed, LettersUsedProps } from "./components/LettersUsed";
+import { LettersUsed } from "./components/LettersUsed";
+import type { LettersUsedProps } from "./components/LettersUsed";
 
 export default function App() {
   const [letter, setLetter] = useState(""); // letras já digitadas
@@ -29,6 +31,29 @@ export default function App() {
 
     setAttempts(0);
     setLetter("");
+  }
+
+  function handleConfirm() {
+    if (!challenge) {
+      return;
+    }
+
+    if (!letter.trim()) {
+      return alert("Digite uma letra!");
+    }
+
+    const value = letter.toUpperCase();
+    const exists = lettersUsed.find(
+      (used) => used.value.toUpperCase() === value
+    );
+
+    if (exists) {
+      return alert("Você já utilizou a letra: " + value);
+    }
+
+    setLettersUsed((prevState) => [...prevState, { value, correct: false }]);
+
+    setLetter("")
   }
 
   useEffect(() => {
@@ -55,8 +80,15 @@ export default function App() {
         <h4>Palpite:</h4>
 
         <div className={styles.guess}>
-          <Input autoFocus maxLength={1} placeholder="?" />
-          <Button title="Confirmar" />
+          <Input
+            autoFocus
+            maxLength={1}
+            placeholder="?"
+            value={letter}
+            onChange={(e) => setLetter(e.target.value)}
+          />
+
+          <Button title="Confirmar" onClick={handleConfirm} />
         </div>
 
         <LettersUsed data={lettersUsed} />
