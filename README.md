@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+# Adivinhe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web feita em React para brincar de descobrir palavras a partir de dicas.
+O jogador informa uma letra por rodada e o jogo revela se ela faz parte da palavra
+secreta. As tentativas são limitadas — se todas forem usadas sem descobrir a
+palavra, a rodada termina.
 
-Currently, two official plugins are available:
+## Sobre o jogo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Uma palavra e uma dica são sorteadas automaticamente na chegada à página.
+- O usuário envia palpites de uma letra por vez; letras repetidas são rejeitadas.
+- Letras corretas são marcadas na palavra e aumentam a pontuação parcial.
+- O número total de tentativas disponíveis é o tamanho da palavra somado a uma
+  margem de cinco palpites extras.
+- Ao acertar todas as letras ou esgotar as tentativas, o jogo mostra uma mensagem
+  e inicia uma nova rodada.
 
-## Expanding the ESLint configuration
+## Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React + TypeScript
+- Vite
+- CSS Modules
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Executando localmente
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Instale as dependências com `npm install`.
+2. Inicie o servidor de desenvolvimento com `npm run dev`.
+3. Abra o endereço indicado no terminal para jogar.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Próximos passos sugeridos
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Persistir o histórico de vitórias e derrotas em `localStorage`.
+- Adicionar modo "palavra completa" para arriscar uma resposta final.
+- Criar testes para garantir as regras de pontuação e limite de tentativas.
