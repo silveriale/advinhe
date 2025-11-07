@@ -45,6 +45,8 @@ export default function App() {
   const [lettersUsed, setLettersUsed] = useState<LettersUsedProps[]>([]); // Letras usadas e se estão corretas
   const [challenge, setChallenge] = useState<Challenge | null>(null); // Palavra atual e dica do desafio
 
+  const [shake, setShake] = useState(false);
+
   /**
    * Reinicia o jogo caso o usuário confirme a ação.
    * @returns {void}
@@ -133,6 +135,11 @@ export default function App() {
     setScore(currentScore);
     // Limpa o campo de letra para nova entrada
     setLetter("");
+
+    if (!correct) {
+      setShake(true);
+      setTimeout(() => setShake(false), 300);
+    }
   }
 
   /**
@@ -189,10 +196,8 @@ export default function App() {
           max={challenge.word.length + ATTEMPTS_MARGIN} // Número máximo de tentativas permitidas
           onRestart={handleRestartGame} // Função para reiniciar o jogo
         />
-
         <Tip tip={challenge.tip} /> {/* Exibe a dica da palavra */}
-
-        <div className={styles.word}>
+        <div className={`${styles.word} ${shake && styles.shake}`}>
           {challenge.word.split("").map((letter, index) => {
             // Busca se a letra já foi usada e se está correta
             const letterUsed = lettersUsed.find(
@@ -209,9 +214,7 @@ export default function App() {
             );
           })}
         </div>
-
         <h4>Palpite:</h4>
-
         <div className={styles.guess}>
           <Input
             autoFocus // Foca automaticamente no input ao renderizar
@@ -220,10 +223,9 @@ export default function App() {
             value={letter} // Valor controlado do input
             onChange={(e) => setLetter(e.target.value)} // Atualiza o estado com o valor digitado
           />
-
-          <Button title="Confirmar" onClick={handleConfirm} /> {/* Botão para confirmar letra */}
+          <Button title="Confirmar" onClick={handleConfirm} />{" "}
+          {/* Botão para confirmar letra */}
         </div>
-
         <LettersUsed data={lettersUsed} /> {/* Exibe as letras já usadas */}
       </main>
     </div>

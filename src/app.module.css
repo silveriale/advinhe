@@ -32,8 +32,50 @@
   margin: 2.5rem 0; /* Espaçamento acima e abaixo do bloco */
 }
 
+/* .container main h4 {
+  color: #32325f;
+  font-size: 1.12rem;
+  font-weight: 600;
+} */
+
 .guess {
   display: flex; /* Usa flexbox para alinhar os elementos filhos em linha */
   gap: 0.75rem; /* Define o espaçamento horizontal entre os itens */
   margin-top: 0.75rem; /* Adiciona um espaçamento acima do bloco */
+}
+
+@media (max-widht: 425px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .container main {
+    width: 100%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  75% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
 }
